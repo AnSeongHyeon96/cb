@@ -86,7 +86,7 @@ $(document).ready(function() {
 	<c:forEach var="p" items="${list }">
 	<tr>
 	<td><a href="${pageContext.request.contextPath }
-/seller/itemView?num=${p.num }&type=2">${p.name }</a></td>
+/cbproduct/cbview?num=${p.num }&type=2">${p.name }</a></td>
 	<td>${p.info }</td><td>${p.price }</td>
 	<td>${p.quantity }</td>
 	</tr>
