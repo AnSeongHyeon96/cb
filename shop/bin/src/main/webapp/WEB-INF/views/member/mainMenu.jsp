@@ -17,10 +17,10 @@
 	<a>내정보</a>
 	<a href="${pageContext.request.contextPath }/member/editForm">내정보수정</a>
 	<a href="${pageContext.request.contextPath }/member/logout">로그아웃</a>
-	<a href="${pageContext.request.contextPath }/member/out">탈퇴</a>
+	<a href="${pageContext.request.contextPath }/member/out">탈퇴하기</a>
 	
 	<br>	
-	<a >게시판</a>
+	
 	<a>판매리스트</a>
 	<a>구매리스트</a>
 
@@ -38,7 +38,7 @@
 	<a>내정보</a>
 	<a href="${pageContext.request.contextPath }/member/editForm">내정보수정</a>
     <a href="${pageContext.request.contextPath }/member/logout">로그아웃</a>
-    <a href="${pageContext.request.contextPath }/member/out">회원탈퇴</a>
+    <a href="${pageContext.request.contextPath }/member/out">탈퇴하기</a>
 	
 </c:if>
 

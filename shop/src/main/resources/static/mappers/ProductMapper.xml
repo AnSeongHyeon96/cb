@@ -16,7 +16,7 @@
 	</resultMap>
 	<insert id="insert" parameterType="com.example.demo.seller.Product">
 		insert into cbproduct
-		values(#{num}, #{name}, #{quantity}, #{info}, #{price},
+		values(#{num}, #{name}, #{info},  #{quantity}, #{price},
 		#{seller_id}, #{category1_id}, #{category2_id}, #{category3_id}) 
 	</insert>
 	

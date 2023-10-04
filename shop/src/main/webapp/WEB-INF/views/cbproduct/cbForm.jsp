@@ -67,8 +67,22 @@
 </script>
 </head>
 <body>
-<h3>CampBoss - 상품등록</h3>
-
-<form action="${pageContext.request.contextPath }"></form>
+	<h3>상품 등록 페이지</h3>
+	<form action="${pageContext.request.contextPath }/seller/add" 
+	method="post" enctype="multipart/form-data"> 
+	대분류<select id="s1" name="category1_id"></select>
+	중분류<select id="s2" name="category2_id"></select>
+	소분류<select id="s3" name="category3_id"></select>	<br>f
+	name:<input type="text" name="name"><br>
+	info:<input type="text" name="info"><br>
+	quantity:<input type="text" name="quantity"><br>
+	price:<input type="text" name="price"><br>
+	seller_id:<input type="text" name="seller_id" 
+	value="${sessionScope.user_id }" readonly><br>
+	img1:<input type="file" name="file1"><br>
+	img2:<input type="file" name="file2"><br>
+	img3:<input type="file" name="file3"><br>
+	<input type="reset" value="취소">	<input type="submit" value="등록">
+	</form>
 </body>
 </html>

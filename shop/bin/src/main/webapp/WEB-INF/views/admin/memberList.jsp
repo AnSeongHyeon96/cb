@@ -44,7 +44,7 @@
 				<td>${m.user_tel } </td>
 				<td>${m.user_addr } </td>
 				<td>${m.user_birth } </td>
-				<td>Ε»Επ</td>
+				<td> <a  href="${pageContext.request.contextPath}/member/del?user_id=${m.user_id}"  >Ε»Επ</a> </td>
 			</tr>
 		</c:forEach>
 	</c:when>

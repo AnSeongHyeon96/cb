@@ -19,7 +19,8 @@
 
 <c:if test="${sessionScope.user_type==1 }">
 	${sessionScope.user_id } 님 로그인 상태 <br>
-	일반회원 로그인 했음 
+	<c:import url="/WEB-INF/views/cbproduct/cbPage.jsp"></c:import>
+	
 </c:if>
 
 <c:if test="${sessionScope.user_type==2 }">

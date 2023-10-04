@@ -40,7 +40,7 @@ public class SellerController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/seller/form")
+	@RequestMapping(value = "/cbproduct/cbForm")
 	public void form() {
 	}
 

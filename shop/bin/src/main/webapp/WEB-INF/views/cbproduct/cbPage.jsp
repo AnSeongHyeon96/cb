@@ -58,7 +58,7 @@ $(document).ready(function() {
 <body>
 <h3>Camp Boss - 상품리스트</h3>
 
-
+<a href="${pageContext.request.contextPath }">상품등록</a>
 <h3>상품 목록</h3>
 	<form action="${pageContext.request.contextPath }/seller/cateList"
 		method="post">
