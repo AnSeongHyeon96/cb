@@ -75,11 +75,11 @@ public class SellerController {
 		return "member/main";
 	}
 
-	@RequestMapping(value = "/seller/itemView")
+	@RequestMapping(value = "/cbproduct/cbview")
 	public ModelAndView itemView(@RequestParam(value = "num") int num, @RequestParam(value = "type") int type) {
 		ModelAndView mav = new ModelAndView();
 		if (type == 1) {
-			mav.setViewName("seller/itemView");
+			mav.setViewName("cbproduct/cbview");
 		} else if (type == 2) {
 			mav.setViewName("order/itemView");
 		}
