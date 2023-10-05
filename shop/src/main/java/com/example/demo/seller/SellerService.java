@@ -16,6 +16,10 @@ public class SellerService {
 	public void addProduct(Product p) {
 		mapper.insert(p);
 	}
+	
+	public Product getProduct(String seller_id) {
+		return mapper.select(seller_id);
+	}
 
 	public Product getProductByNum(int num) {
 		return mapper.selectByNum(num);

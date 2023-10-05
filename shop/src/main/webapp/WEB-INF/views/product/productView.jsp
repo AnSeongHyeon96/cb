@@ -23,8 +23,10 @@ $(document).ready(function() {
 
 </head>
 <body>
-<form id="f1" action="${pageContext.request.contextPath }/cbproduct/cbedit" 
+	<h3>상품 상세 정보</h3>
+	<form id="f1" action="${pageContext.request.contextPath }/product/view" 
 	method="post">
+	<input type="hidden" name="pro_num" value="${p.num }">
 	<table border="1" cellspacing="0">
 		<tr>
 			<th>상품 이름</th>
@@ -51,20 +53,21 @@ $(document).ready(function() {
 		</tr>
 		<tr>
 			<th>상품 내용</th>
-			<td><input type="text"  value="${p.info }" ></td>
+			<td><input type="text"  value="${p.info }" readonly></td>
 		</tr>
 		<tr>
 			<th>가격</th>
-			<td><input type="text" value="${p.price }" ></td>
+			<td><input type="text" value="${p.price }" readonly></td>
 		</tr>
-		<tr>
-			<th>판매자</th>
-			<td><input type="text" name="seller_id" value="${sessionScope.seller_id }"></td>
-		</tr>
+		
 	</table>
-	<input type="submit" value="수정">
-	<input type="reset" id="del" value="삭제">
 	</form>
 	
+	<form action="">
+	<h3>댓글</h3>
+	
+	
+	</form>
 </body>
 </html>
+

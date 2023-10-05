@@ -19,7 +19,7 @@
 
 <c:if test="${sessionScope.user_type==1 }">
 	${sessionScope.user_id } 님 로그인 상태 <br>
-	<c:import url="/WEB-INF/views/cbproduct/cbPage.jsp"></c:import>
+	<c:import url="/WEB-INF/views/product/productPage.jsp"></c:import>
 	
 </c:if>
 

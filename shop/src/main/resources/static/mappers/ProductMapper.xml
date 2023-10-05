@@ -19,6 +19,11 @@
 		#{seller_id}, #{category1_id}, #{category2_id}, #{category3_id}) 
 	</insert>
 	
+	<select id="select" resultMap="ProdResult" 
+	parameterType="String">
+		select * from cbproduct where seller_id = #{seller_id}
+	</select >
+	
 	<select id="selectByNum" parameterType="int" 
 	resultMap="ProdResult">
 		select * from cbproduct where num=#{num}
@@ -62,7 +67,7 @@
 	
 	<update id="update" parameterType="com.example.demo.seller.Product">
 		update cbproduct set name=#{name},  info=#{info},  price=#{price}
-		 where num=#{num}
+		 where seller_id = #{seller_id}
 	</update>
 	
 	<delete id="delete" parameterType="int">

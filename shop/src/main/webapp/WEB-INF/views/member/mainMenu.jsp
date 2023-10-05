@@ -20,8 +20,8 @@
 	<a href="${pageContext.request.contextPath }/member/out">탈퇴하기</a>
 	
 	<br>	
-	<a href="${pageContext.request.contextPath }/cbproduct/cbForm">상품등록</a>
-	<a href="${pageContext.request.contextPath }/cbproduct/cbList">판매리스트</a>
+	<a href="${pageContext.request.contextPath }/product/productAdd">상품등록</a>
+	<a href="${pageContext.request.contextPath }/product/productList">판매리스트</a>
 	
 
 

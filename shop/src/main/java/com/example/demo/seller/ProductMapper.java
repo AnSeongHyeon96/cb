@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface ProductMapper {
 	void insert(Product p);
+	Product select(String seller_id);
 	Product selectByNum(int num);
 	List selectByName(String name);
 	List selectBySellerId(String seller_id);

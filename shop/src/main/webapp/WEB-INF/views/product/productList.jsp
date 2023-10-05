@@ -6,6 +6,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>CampBoss - 판매리스트</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$(".img").mouseover(function() {
+			$("#bigImg").attr('src', this.src);
+		});
+		$("#del").click(function() {
+			$("#f1").attr('action', '/seller/del');
+			$("#f1").submit();
+		});
+	});
+</script>
+
 <c:import url="/WEB-INF/views/member/mainMenu.jsp"></c:import>
 	<br><br><br>
 </head>
@@ -13,7 +26,7 @@
 
 <h3>CampBoss - 판매리스트</h3>
 
-<form action="${pageContext.request.contextPath }/seller/cbList">
+<form action="${pageContext.request.contextPath }/product/productList">
 <table border="1">
 	<c:choose>
 	<c:when test="${empty list }">
@@ -29,13 +42,13 @@
 		<td>상품이름</td>
 		<td>상품내용</td>
 		<td>가격</td>
+		
 	</tr>
 	
 	<c:forEach var="p" items="${list }">
 	
 	<tr>
-		<td><a href="${pageContext.request.contextPath }
-		/cbproduct/cbeditForm">${p.name }</a></td>
+		<td><a href="${pageContext.request.contextPath }/product/productEdit?num=${p.num}">${p.name }</a></td>
 		<td>${p.info }</td>
 		<td>${p.price }</td>
 		

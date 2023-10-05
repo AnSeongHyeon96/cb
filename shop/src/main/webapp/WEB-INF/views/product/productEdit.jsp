@@ -1,38 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+    pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>CampBoss - 판매리스트</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
-$(document).ready(function() {
-	$(".img").mouseover(function() {
-		$("#bigImg").attr('src', this.src);
+	$(document).ready(function() {
+		$(".img").mouseover(function() {
+			$("#bigImg").attr('src', this.src);
+		});
+		$("#del").click(function() {
+			$("#f1").attr('action', '/seller/del');
+			$("#f1").submit();
+		});
 	});
-	$("#del").click(function() {
-		$("#f1").attr('action', '/seller/del');
-		$("#f1").submit();
-	});
-});
 </script>
-	<c:import url="/WEB-INF/views/member/mainMenu.jsp"></c:import>
-	<br><br><br>
 
+<c:import url="/WEB-INF/views/member/mainMenu.jsp"></c:import>
+	<br><br><br>
 </head>
 <body>
-	<h3>상품 상세 정보</h3>
-	<form id="f1" action="${pageContext.request.contextPath }/cbproduct/cbview" 
-	method="post">
-	<input type="hidden" name="pro_num" value="${p.num }">
-	<table border="1" cellspacing="0">
-		<tr>
-			<th>상품 이름</th>
-			<td><input type="text" value="${p.name }" readonly></td>
-		</tr>
-		<tr>
+<form action="${pageContext.request.contextPath }/product/edit" method="post"  id="f1">
+<input type="hidden" name="num" value="${p.num }">
+<table border="1">
+
+<tr>
+<th>상품 이름</th>
+<td><input type="text" name="name" value="${p.name }"></td>
+</tr>
+
+<tr>
 			<th>상품 이미지</th>
 			<td><c:if test="${empty file0 }">
 					등록된 이미지가 없습니다.
@@ -51,34 +51,31 @@ $(document).ready(function() {
 					</table>
 				</c:if></td>
 		</tr>
-		<tr>
-			<th>상품 내용</th>
-			<td><input type="text"  value="${p.info }" readonly></td>
-		</tr>
-		<tr>
-			<th>가격</th>
-			<td><input type="text" value="${p.price }" readonly></td>
-		</tr>
-		<tr>
-			<th>판매자</th>
-			<td><input type="text" name="consumer_id" value="${p.seller_id }" readonly></td>
-		</tr>
-	</table>
-	</form>
-	
-	<form action="">
-	<h3>댓글</h3>
-	
-	
-	</form>
+		
+<tr>
+<th>상품내용</th>
+<td><input type="text" name="info" value="${p.info }"></td>
+</tr>
+
+<tr>
+<th>가격</th>
+<td><input type = "text" name="price" value="${p.price }"></td>
+</tr>
+
+<tr>
+<th>판매자</th>
+<td><input type="text" name="seller_id" value="${p.seller_id }"readonly></td>
+</tr>
+
+<tr>
+<th></th>
+<td>
+<input type="submit" value="수정">
+<input type="reset" value="삭제" id="del">
+</td>
+</tr>
+</table>
+
+</form>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
