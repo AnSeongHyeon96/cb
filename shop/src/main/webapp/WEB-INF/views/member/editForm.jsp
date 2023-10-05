@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>CampBoss - 회원정보 수정</title>
 </head>
 <body>
-<h3>내 정보 수정</h3>
+<h3>CampBoss - 회원정보 수정</h3>
 <form action="${pageContext.request.contextPath }/member/edit"
 method="post">
 id:<input type="text" name="user_id" value="${m.user_id }" readonly><br/>

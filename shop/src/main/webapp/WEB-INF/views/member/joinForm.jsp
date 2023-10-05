@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>CampBoss - 회원가입</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 	$(document).ready(function() {
@@ -26,7 +26,7 @@
 </script>
 </head>
 <body>
-	<h3>회원가입</h3>
+	<h3>CampBoss - 회원가입</h3>
 	<form action="${pageContext.request.contextPath }/member/join" method="post">
 		id: <input type="text" name="user_id" id="user_id"> 
 			<input type="button" id="idCheck" value="id 중복체크"> 

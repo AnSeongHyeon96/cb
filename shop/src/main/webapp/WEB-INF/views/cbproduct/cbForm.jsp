@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>CampBoss - 상품등록</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 	$(document).ready(
@@ -67,14 +67,13 @@
 </script>
 </head>
 <body>
-	<h3>상품 등록 페이지</h3>
+	<h3>CampBoss - 상품등록</h3>
 	<form action="${pageContext.request.contextPath }/seller/add" 
 	method="post" enctype="multipart/form-data"> 
 	대분류<select id="s1" name="category1_id"></select>
 	중분류<select id="s2" name="category2_id"></select>
 	소분류<select id="s3" name="category3_id"></select>	<br>
 	상품 이름 : <input type="text" name="name"><br>
-	상품 수량 :<input type="text" name="quantity"><br>
 	상품 내용 : <input type="text" name="info"><br>
 	상품 가격:<input type="text" name="price"><br>
 	판매자 : <input type="text" name="seller_id" 
