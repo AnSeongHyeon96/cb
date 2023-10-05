@@ -8,11 +8,15 @@
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
-	$(document).ready(function() {
-		$(".img").mouseover(function() {
-			$("#bigImg").attr('src', this.src);
-		});
+$(document).ready(function() {
+	$(".img").mouseover(function() {
+		$("#bigImg").attr('src', this.src);
 	});
+	$("#del").click(function() {
+		$("#f1").attr('action', '/seller/del');
+		$("#f1").submit();
+	});
+});
 </script>
 	<c:import url="/WEB-INF/views/member/mainMenu.jsp"></c:import>
 	<br><br><br>
@@ -20,7 +24,7 @@
 </head>
 <body>
 	<h3>상품 상세 정보</h3>
-	<form id="f1" action="${pageContext.request.contextPath }/order/order" 
+	<form id="f1" action="${pageContext.request.contextPath }/cbproduct/cbview" 
 	method="post">
 	<input type="hidden" name="pro_num" value="${p.num }">
 	<table border="1" cellspacing="0">
@@ -61,7 +65,13 @@
 		</tr>
 	</table>
 	</form>
+	<c:if test="${user_id == p.seller_id }">
+	<input type="submit" value="수정">
+	</c:if>
 	
+	<c:if test="${ user_id  != p.seller_id}">
+	<input type="submit" value="수정">
+	</c:if>
 	
 	<form action="">
 	<h3>댓글</h3>

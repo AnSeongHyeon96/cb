@@ -21,8 +21,8 @@
 	
 	<br>	
 	<a href="${pageContext.request.contextPath }/cbproduct/cbForm">상품등록</a>
-	<a>판매리스트</a>
-	<a>구매리스트</a>
+	<a href="${pageContext.request.contextPath }/cbproduct/cbList">판매리스트</a>
+	
 
 
 </c:if>

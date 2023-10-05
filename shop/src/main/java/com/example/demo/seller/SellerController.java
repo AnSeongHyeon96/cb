@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -19,9 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.admin.AdminService;
-import com.example.demo.order.OrderService;
-
 @Controller
 public class SellerController {
 
@@ -29,16 +27,26 @@ public class SellerController {
 	private SellerService service;
 
 	public static String basePath = "C:\\shopimg\\";
-
-	@RequestMapping(value = "/seller/myList")
-	public ModelAndView myList(HttpServletRequest req) {
-		ModelAndView mav = new ModelAndView("member/prodPage");
+	
+	
+	
+	@RequestMapping(value = "/cbproduct/cbList")
+	public ModelAndView cbList(HttpServletRequest req) {
+		ModelAndView mav = new ModelAndView("cbproduct/cbList");
 		HttpSession session = req.getSession(false);
-		String seller_id = (String) session.getAttribute("id");
+		String seller_id = (String)session.getAttribute("user_id");
+		
 		ArrayList<Product> list = (ArrayList<Product>) service.getProductBySellerId(seller_id);
-		mav.addObject("list", list);
+		
+		for(int i = 0; i < list.size(); i++ ) {
+			Product p = list.get(i);
+			p.setSeller_id(seller_id);
+		}
+		mav.addObject("list",list);
 		return mav;
 	}
+
+	
 
 	@RequestMapping(value = "/cbproduct/cbForm")
 	public void form() {
@@ -80,8 +88,6 @@ public class SellerController {
 		ModelAndView mav = new ModelAndView();
 		if (type == 1) {
 			mav.setViewName("cbproduct/cbview");
-		} else if (type == 2) {
-			mav.setViewName("order/itemView");
 		}
 		Product p = service.getProductByNum(num);
 		String path = basePath + p.getNum() + "\\";
@@ -96,8 +102,8 @@ public class SellerController {
 		mav.addObject("p", p);
 		return mav;
 	}
-
-	@RequestMapping(value = "/seller/edit")
+	
+	@RequestMapping(value = "/cbproduct/edit")
 	public String edit(Product p) {
 		service.editProduct(p);
 		return "member/main";
