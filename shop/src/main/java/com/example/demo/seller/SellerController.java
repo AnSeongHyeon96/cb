@@ -32,16 +32,6 @@ public class SellerController {
 
 	public static String basePath = "C:\\shopimg\\";
 
-	@RequestMapping(value = "/seller/myList")
-	public ModelAndView myList(HttpServletRequest req) {
-		ModelAndView mav = new ModelAndView("member/prodPage");
-		HttpSession session = req.getSession(false);
-		String seller_id = (String) session.getAttribute("id");
-		ArrayList<Product> list = (ArrayList<Product>) service.getProductBySellerId(seller_id);
-		mav.addObject("list", list);
-		return mav;
-	}
-
 	@RequestMapping(value = "/cbproduct/cbForm")
 	public void form() {
 	}
