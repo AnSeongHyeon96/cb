@@ -34,7 +34,8 @@
 	<c:forEach var="p" items="${list }">
 	
 	<tr>
-		<td><a href="${pageContext.request.contextPath }/cbproduct/cbeditForm ">${p.name }</a></td>
+		<td><a href="${pageContext.request.contextPath }
+		/cbproduct/cbeditForm">${p.name }</a></td>
 		<td>${p.info }</td>
 		<td>${p.price }</td>
 		

@@ -65,13 +65,6 @@ $(document).ready(function() {
 		</tr>
 	</table>
 	</form>
-	<c:if test="${user_id == p.seller_id }">
-	<input type="submit" value="수정">
-	</c:if>
-	
-	<c:if test="${ user_id  != p.seller_id}">
-	<input type="submit" value="수정">
-	</c:if>
 	
 	<form action="">
 	<h3>댓글</h3>

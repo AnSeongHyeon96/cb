@@ -104,11 +104,27 @@ public class SellerController {
 	}
 	
 	@RequestMapping(value = "/cbproduct/cbeditForm")
-	public void cbeditform() {
+	public ModelAndView cbeditForm(@RequestParam(value = "num") int num, @RequestParam(value = "type") int type) {
+		ModelAndView mav = new ModelAndView();
+		if (type == 1) {
+			mav.setViewName("cbproduct/cbeditForm");
+		}
+		Product p = service.getProductByNum(num);
+		String path = basePath + p.getNum() + "\\";
+		File imgDir = new File(path);
+		if (imgDir.exists()) {
+			String[] files = imgDir.list();
+			for (int j = 0; j < files.length; j++) {
+				mav.addObject("file" + j, files[j]);
+			}
+		}
+
+		mav.addObject("p", p);
+		return mav;
 	}
 	
-	@RequestMapping(value = "/cbproduct/edit")
-	public String edit(Product p) {
+	@RequestMapping(value = "/cbproduct/cbedit")
+	public String cbedit(Product p) {
 		service.editProduct(p);
 		return "member/main";
 	}
