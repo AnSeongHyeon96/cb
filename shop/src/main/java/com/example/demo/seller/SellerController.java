@@ -104,29 +104,19 @@ public class SellerController {
 	}
 	
 	@RequestMapping(value = "/cbproduct/cbeditForm")
-	public ModelAndView cbeditForm(@RequestParam(value = "num") int num, @RequestParam(value = "type") int type) {
-		ModelAndView mav = new ModelAndView();
-		if (type == 1) {
-			mav.setViewName("cbproduct/cbeditForm");
-		}
-		Product p = service.getProductByNum(num);
-		String path = basePath + p.getNum() + "\\";
-		File imgDir = new File(path);
-		if (imgDir.exists()) {
-			String[] files = imgDir.list();
-			for (int j = 0; j < files.length; j++) {
-				mav.addObject("file" + j, files[j]);
-			}
-		}
-
-		mav.addObject("p", p);
+	public ModelAndView cbeditFrom(HttpServletRequest req) {
+		ModelAndView mav = new ModelAndView("cbproduct/cbeditFrom");
+		HttpSession session = req.getSession(false);
+		String seller_id = (String )session.getAttribute("seller_id");
+		Product p = (Product) service.getProductBySellerId(seller_id);
+		mav.addObject("p",p);
 		return mav;
 	}
 	
 	@RequestMapping(value = "/cbproduct/cbedit")
-	public String cbedit(Product p) {
+	public String edit(Product p) {
 		service.editProduct(p);
-		return "member/main";
+		return "cbproduct/cbList";
 	}
 
 	@RequestMapping(value = "/seller/del")

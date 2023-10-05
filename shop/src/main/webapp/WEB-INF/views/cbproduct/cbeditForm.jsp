@@ -25,7 +25,6 @@ $(document).ready(function() {
 <body>
 <form id="f1" action="${pageContext.request.contextPath }/cbproduct/cbedit" 
 	method="post">
-	<input type="hidden" name="pro_num" value="${p.num }">
 	<table border="1" cellspacing="0">
 		<tr>
 			<th>상품 이름</th>
@@ -60,7 +59,7 @@ $(document).ready(function() {
 		</tr>
 		<tr>
 			<th>판매자</th>
-			<td><input type="text" name="seller_id" value="${p.seller_id }"></td>
+			<td><input type="text" name="seller_id" value="${sessionScope.seller_id }"></td>
 		</tr>
 	</table>
 	<input type="submit" value="수정">
