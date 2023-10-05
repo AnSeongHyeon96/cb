@@ -82,13 +82,13 @@ $(document).ready(function() {
 	<c:if test="${empty list }">검색된 상품이 없다. </c:if>
 	<c:if test="${not empty list }">
 	<table border="1" cellspacing="0">
-	<tr><th>제품명</th><th>설명</th><th>가격</th><th>수량</th></tr>
+	<tr><th>상품 이름</th><th>상품 설명</th><th>가격</th><th>판매자</th></tr>
 	<c:forEach var="p" items="${list }">
 	<tr>
 	<td><a href="${pageContext.request.contextPath }
-/cbproduct/cbview?num=${p.num }&type=2">${p.name }</a></td>
+/cbproduct/cbview?num=${p.num }&type=1">${p.name }</a></td>
 	<td>${p.info }</td><td>${p.price }</td>
-	<td>${p.quantity }</td>
+	<td>${p.seller_id }</td>
 	</tr>
 	</c:forEach>
 

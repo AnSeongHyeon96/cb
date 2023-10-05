@@ -26,7 +26,7 @@ public class OrderController {
 	public String order(Order o){
 		Product p = s_service.getProductByNum(o.getPro_num());
 		o.setP(p);
-		return "order/orderView";
+		return "member/main";
 	}
 	
 	@RequestMapping(value="/order/order2")

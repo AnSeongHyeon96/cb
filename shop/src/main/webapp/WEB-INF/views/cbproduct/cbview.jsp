@@ -12,25 +12,24 @@
 		$(".img").mouseover(function() {
 			$("#bigImg").attr('src', this.src);
 		});
-		$("#del").click(function() {
-			$("#f1").attr('action', '/seller/del');
-			$("#f1").submit();
-		});
 	});
 </script>
+	<c:import url="/WEB-INF/views/member/mainMenu.jsp"></c:import>
+	<br><br><br>
+
 </head>
 <body>
-<h3>상품 상세 정보</h3>
-	<form id="f1" action="${pageContext.request.contextPath }/seller/edit" 
+	<h3>상품 상세 정보</h3>
+	<form id="f1" action="${pageContext.request.contextPath }/order/order" 
 	method="post">
-	<input type="hidden" name="num" value="${p.num }">
+	<input type="hidden" name="pro_num" value="${p.num }">
 	<table border="1" cellspacing="0">
 		<tr>
-			<th>상품명</th>
-			<td><input type="text" name="name" value="${p.name }"></td>
+			<th>상품 이름</th>
+			<td><input type="text" value="${p.name }" readonly></td>
 		</tr>
 		<tr>
-			<th>이미지</th>
+			<th>상품 이미지</th>
 			<td><c:if test="${empty file0 }">
 					등록된 이미지가 없습니다.
 					</c:if> 
@@ -49,24 +48,34 @@
 				</c:if></td>
 		</tr>
 		<tr>
-			<th>제품설명</th>
-			<td><input type="text" name="info" value="${p.info }"></td>
-		</tr>
-		<tr>
-			<th>수량</th>
-			<td><input type="text" name="quantity" value="${p.quantity }"></td>
+			<th>상품 내용</th>
+			<td><input type="text"  value="${p.info }" readonly></td>
 		</tr>
 		<tr>
 			<th>가격</th>
-			<td><input type="text" name="price" value="${p.price }"></td>
+			<td><input type="text" value="${p.price }" readonly></td>
 		</tr>
 		<tr>
-		<td colspan="2">
-		<input type="submit" value="수정">
-		<input type="button" value="삭제" id="del"> 
-		</td>
+			<th>판매자</th>
+			<td><input type="text" name="consumer_id" value="${p.seller_id }" readonly></td>
 		</tr>
 	</table>
 	</form>
+	
+	
+	<form action="">
+	<h3>댓글</h3>
+	
+	
+	</form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

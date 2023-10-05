@@ -5,13 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Member All List</title>
+<title>CampBoss - 회원관리</title>
 
 	<c:import url="/WEB-INF/views/member/mainMenu.jsp"></c:import>
 	<br><br><br>
 	
 </head>
 <body>
+<h3>CampBoss - 회원관리</h3>
 <form action = "${pageContext.request.contextPath}/admin/memberList" method = "post">
 <table border="1">
 <c:choose>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>CampBoss - 로그인</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 
