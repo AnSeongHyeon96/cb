@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.taglibs.standard.lang.jstl.test.beans.PublicBean1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.admin.AdminService;
+import com.example.demo.member.Member;
 import com.example.demo.order.OrderService;
 
 @Controller
@@ -178,4 +180,38 @@ public class SellerController {
 
 		return result;
 	}
+	
+	//상품전체출력 (관리자 )
+	@RequestMapping(value = "/admin/productList")
+	public ModelAndView porList() {
+		ModelAndView mav = new ModelAndView("admin/productList");
+		ArrayList<Product> list = (ArrayList<Product>) service.getProductAll();
+		mav.addObject("list", list);
+		return mav;
+	}
+	
+	//상품리스트 삭제(관리자 )
+	@RequestMapping(value = "/seller/prodel")
+	public String prodel(@RequestParam(value = "num") int num) {
+		service.delProduct(num);
+		String path = basePath + num + "\\";
+		File imgDir = new File(path);
+		if (imgDir.exists()) {
+			String[] files = imgDir.list();
+			for (int j = 0; j < files.length; j++) {
+				File f = new File(path + files[j]);
+				f.delete();
+			}
+		}
+		imgDir.delete();
+		
+	    ModelAndView mav = new ModelAndView("admin/productList");
+	    ArrayList<Product> list = (ArrayList<Product>) service.getProductAll();
+	    mav.addObject("list", list);
+	    return "redirect:/admin/productList";
+		
+	}
+	
+
+
 }
