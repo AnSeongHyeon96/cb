@@ -103,6 +103,10 @@ public class SellerController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/cbproduct/cbeditForm")
+	public void cbeditform() {
+	}
+	
 	@RequestMapping(value = "/cbproduct/edit")
 	public String edit(Product p) {
 		service.editProduct(p);

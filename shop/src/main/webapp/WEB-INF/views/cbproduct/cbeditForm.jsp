@@ -23,6 +23,49 @@ $(document).ready(function() {
 
 </head>
 <body>
-
+<form id="f1" action="${pageContext.request.contextPath }/cbproduct/cbedit" 
+	method="post">
+	<input type="hidden" name="pro_num" value="${p.num }">
+	<table border="1" cellspacing="0">
+		<tr>
+			<th>상품 이름</th>
+			<td><input type="text" value="${p.name }" readonly></td>
+		</tr>
+		<tr>
+			<th>상품 이미지</th>
+			<td><c:if test="${empty file0 }">
+					등록된 이미지가 없습니다.
+					</c:if> 
+					<c:if test="${not empty file0 }">
+					<table>
+						<tr>
+							<td colspan="3">
+							<img id="bigImg" src="${pageContext.request.contextPath }/img?fname=${file0 }&num=${p.num }" 
+							style="width:150px;height:150px"></td>
+						</tr>
+						<tr>
+							<td><img src="${pageContext.request.contextPath }/img?fname=${file0 }&num=${p.num }" class="img" width="50" height="50"></td>
+							<td><img src="${pageContext.request.contextPath }/img?fname=${file1 }&num=${p.num }" class="img" width="50" height="50"></td>
+							<td><img src="${pageContext.request.contextPath }/img?fname=${file2 }&num=${p.num }" class="img" width="50" height="50"></td>
+					</table>
+				</c:if></td>
+		</tr>
+		<tr>
+			<th>상품 내용</th>
+			<td><input type="text"  value="${p.info }" ></td>
+		</tr>
+		<tr>
+			<th>가격</th>
+			<td><input type="text" value="${p.price }" ></td>
+		</tr>
+		<tr>
+			<th>판매자</th>
+			<td><input type="text" name="seller_id" value="${p.seller_id }"></td>
+		</tr>
+	</table>
+	<input type="submit" value="수정">
+	<input type="reset" id="del" value="삭제">
+	</form>
+	
 </body>
 </html>
