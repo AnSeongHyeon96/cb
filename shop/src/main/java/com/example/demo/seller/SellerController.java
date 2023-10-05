@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
+import org.apache.taglibs.standard.lang.jstl.test.beans.PublicBean1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.weaving.DefaultContextLoadTimeWeaver;
 import org.springframework.http.HttpHeaders;
@@ -20,6 +21,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
+
+import com.example.demo.admin.AdminService;
+import com.example.demo.member.Member;
+
+
 
 @Controller
 public class SellerController {
@@ -39,6 +46,7 @@ public class SellerController {
 			mav.addObject("list", list);
 			return mav;
 		}
+
 
 		@RequestMapping(value = "/seller/cateList")
 		public ModelAndView cateList(@RequestParam(value = "c1", required = true) int c1,
@@ -108,6 +116,10 @@ public class SellerController {
 		saveImg(num, p.getFile2());
 		saveImg(num, p.getFile3());
 		return "member/main";
+	}
+	@RequestMapping(value = "/cbproduct/cbForm")
+	public void form() {
+
 	}
 
 	
@@ -216,6 +228,39 @@ public class SellerController {
 
 	
 
+
+
+	
+	//상품전체출력 (관리자 )
+	@RequestMapping(value = "/admin/productList")
+	public ModelAndView porList() {
+		ModelAndView mav = new ModelAndView("admin/productList");
+		ArrayList<Product> list = (ArrayList<Product>) service.getProductAll();
+		mav.addObject("list", list);
+		return mav;
+	}
+	
+	//상품리스트 삭제(관리자 )
+	@RequestMapping(value = "/seller/prodel")
+	public String prodel(@RequestParam(value = "num") int num) {
+		service.delProduct(num);
+		String path = basePath + num + "\\";
+		File imgDir = new File(path);
+		if (imgDir.exists()) {
+			String[] files = imgDir.list();
+			for (int j = 0; j < files.length; j++) {
+				File f = new File(path + files[j]);
+				f.delete();
+			}
+		}
+		imgDir.delete();
+		
+	    ModelAndView mav = new ModelAndView("admin/productList");
+	    ArrayList<Product> list = (ArrayList<Product>) service.getProductAll();
+	    mav.addObject("list", list);
+	    return "redirect:/admin/productList";
+		
+	}
 
 	
 }

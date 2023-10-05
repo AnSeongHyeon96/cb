@@ -142,7 +142,7 @@ public class MemController {
 	@RequestMapping(value = "/admin/memberList")
 	public ModelAndView memList() {
 		ModelAndView mav = new ModelAndView("admin/memberList");
-		ArrayList<Member> list = (ArrayList<Member>) service.selectAll();
+		ArrayList<Member> list = (ArrayList<Member>) service.selectAll();		
 		mav.addObject("list", list);
 		return mav;
 	}

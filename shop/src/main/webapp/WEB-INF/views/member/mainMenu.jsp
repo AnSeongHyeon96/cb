@@ -6,7 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-
     
 </head>
 <body>
@@ -33,6 +32,8 @@
 	<a>관리</a>
 	<a href="${pageContext.request.contextPath }/admin/memberList">회원관리</a>
 	<a href="${pageContext.request.contextPath }/member/main">카테고리관리</a>
+	<a href="${pageContext.request.contextPath }/admin/productList"> 상품리스트관리</a>
+	
 	
 	<br>
 	<a>내정보</a>

@@ -23,19 +23,20 @@
 	</c:when>
 	
 	<c:when test="${not empty list }">
+		
 		<tr align="center" >
-				<td>ID   </td>
-				<td>PWD   </td>
-				<td>NAME   </td>
-				<td>NICKNAME</td>
-				<td>EMAIL  </td>
-				<td>TEL   </td>
-				<td>ADDR  </td>
-				<td>BIRTH </td>
-				<td>OPTION </td>
+				<td>아이디   </td>
+				<td>비밀번호  </td>
+				<td>이름   </td>
+				<td>닉네임 </td>
+				<td>이메일  </td>
+				<td>전화번호   </td>
+				<td>주소  </td>
+				<td>생일 </td>
+				<td> </td>
 		</tr>
 		<c:forEach var="m" items="${list }" >
-			
+				<c:if test="${m.user_type == 1}">
 			<tr align="center" >
 				<td>${m.user_id } </td>
 				<td>${m.user_pwd } </td>
@@ -47,8 +48,10 @@
 				<td>${m.user_birth } </td>
 				<td> <a  href="${pageContext.request.contextPath}/member/del?user_id=${m.user_id}"  >탈퇴</a> </td>
 			</tr>
+				</c:if>
 		</c:forEach>
-	</c:when>
+		</c:when>
+	
 </c:choose>
 </table>
 </form>
