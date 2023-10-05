@@ -14,6 +14,9 @@
 		});
 	});
 </script>
+	<c:import url="/WEB-INF/views/member/mainMenu.jsp"></c:import>
+	<br><br><br>
+
 </head>
 <body>
 	<h3>상품 상세 정보</h3>
@@ -53,16 +56,17 @@
 			<td><input type="text" value="${p.price }" readonly></td>
 		</tr>
 		<tr>
-			<th>구매자</th>
-			<td><input type="text" name="consumer_id" value="${sessionScope.user_id }" readonly></td>
-		</tr>
-		<tr>
-		<td colspan="2">
-		<input type="submit" value="즉시구매">
-		
-		</td>
+			<th>판매자</th>
+			<td><input type="text" name="consumer_id" value="${p.seller_id }" readonly></td>
 		</tr>
 	</table>
+	</form>
+	
+	
+	<form action="">
+	<h3>댓글</h3>
+	
+	
 	</form>
 </body>
 </html>
