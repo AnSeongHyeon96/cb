@@ -7,9 +7,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>CampBoss - 로그인</title>
-<<<<<<< HEAD
+
 <link href="${path}/resources/css/login.css" rel="stylesheet" >
-=======
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -31,33 +31,6 @@ $(document).ready(function() {
 </script>
 
 <link href="${path}/resources/css/loginForm.css" rel="stylesheet" >
-
-
->>>>>>> refs/remotes/origin/master
-</head>
-<<<<<<< HEAD
-=======
-<body>
->>>>>>> refs/remotes/origin/master
-
-<<<<<<< HEAD
-<body>
-<div class = "myform">
-	<div class="logo"> CampBoss - 로그인
-		<div ><i class="fa fa-cloud-upload" aria-hidden = "true"></i>
-		</div>
-	</div>
-	
-	<form action="${pageContext.request.contextPath }/member/login"
-	method="post">
-	
-	<input type="text" name="user_id" placeholder = "  ID">
-	 <input type="password" name="user_pwd" placeholder=" Password">
-	<button type="submit">LOG IN </button>
-	
-	<div><a href="${pageContext.request.contextPath }/member/joinForm">회원가입</a></div>
-	</form>
-=======
 </head>
 <body>
 
@@ -135,7 +108,6 @@ $(document).ready(function() {
          
     </div>
   </div>
->>>>>>> refs/remotes/origin/master
 </div>
 
 </body>
