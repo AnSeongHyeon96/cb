@@ -8,8 +8,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>CampBoss - 로그인</title>
 
-<link href="${path}/resources/css/login.css" rel="stylesheet" >
 
+<link href="${path}/resources/css/loginForm.css" rel="stylesheet" >
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -30,7 +30,6 @@ $(document).ready(function() {
 });
 </script>
 
-<link href="${path}/resources/css/loginForm.css" rel="stylesheet" >
 </head>
 <body>
 
@@ -111,5 +110,4 @@ $(document).ready(function() {
 </div>
 
 </body>
-
 </html>

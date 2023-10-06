@@ -7,10 +7,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
     <title>CampBoss</title>
 
-    
-    <script src="${path}/resources/js/index.js"></script>
-    
-
     <link href="${path}/resources/css/index.css" rel="stylesheet" >
 </head>
 
@@ -31,6 +27,5 @@
 	</div>
 	
 
- 
 </body>
 </html>
