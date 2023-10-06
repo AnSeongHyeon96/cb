@@ -9,6 +9,8 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 	$(document).ready(function() {
+		// 아이디 중복체크 
+		
 		$("#idCheck").click(function() {
 			$.post( "/member/idCheck", { user_id: $("#user_id").val()} )
 		    .done(function( data ) {
@@ -22,6 +24,7 @@
 				alert("id 중복체크 먼저");
 			}
 		});
+		
 	});
 </script>
 </head>
