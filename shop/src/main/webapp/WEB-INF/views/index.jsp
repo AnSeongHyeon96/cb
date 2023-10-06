@@ -1,11 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta charset="EUC-KR">
+    <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
     <title>CampBoss</title>
+<<<<<<< HEAD
+=======
+    
+    <script src="${path}/resources/js/index.js"></script>
+    
+>>>>>>> refs/remotes/origin/master
     <link href="${path}/resources/css/index.css" rel="stylesheet" >
 </head>
+<<<<<<< HEAD
 <body style="margin: 0px; height: 500px;">
 
     <div class="container">
@@ -22,5 +31,12 @@
     <p>Improve the quality of your camping life by purchasing and selling the camping equipment you want!!</p>
 	</div>
 	
+=======
+<body>
+    main
+    campboss
+    <h2 class="section-heading"><a href="${path}/member/loginForm">LOGIN</a></h2>
+    
+>>>>>>> refs/remotes/origin/master
 </body>
 </html>

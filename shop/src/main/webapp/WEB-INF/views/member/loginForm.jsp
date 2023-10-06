@@ -7,9 +7,40 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>CampBoss - 로그인</title>
+<<<<<<< HEAD
 <link href="${path}/resources/css/login.css" rel="stylesheet" >
-</head>
+=======
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+	$("#idCheck").click(function() {
+		$.post( "/member/idCheck", { user_id: $("#user_id").val()} )
+	    .done(function( data ) {
+	    	$("#idResult").text(data);
+	  });
+	});
+	$("#join").click(function() {		
+		if($("#idResult").text().trim()=="OK"){
+			$("form").submit();
+		}else{
+			alert("ID중복체크 먼저 해주세요");
+		}
+	});
+});
+</script>
+
+<link href="${path}/resources/css/loginForm.css" rel="stylesheet" >
+
+
+>>>>>>> refs/remotes/origin/master
+</head>
+<<<<<<< HEAD
+=======
+<body>
+>>>>>>> refs/remotes/origin/master
+
+<<<<<<< HEAD
 <body>
 <div class = "myform">
 	<div class="logo"> CampBoss - 로그인
@@ -26,6 +57,85 @@
 	
 	<div><a href="${pageContext.request.contextPath }/member/joinForm">회원가입</a></div>
 	</form>
+=======
+</head>
+<body>
+
+<div class="login-wrap">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+
+    <div class="login-form">
+ <form action="${pageContext.request.contextPath }/member/login"
+			method="post">
+      <div class="sign-in-htm">
+        <div class="group">
+          <label for="user" class="label">ID</label>
+          <input id="user" type="text" class="input" name="user_id">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="pass" type="password" class="input" name="user_pwd">
+        </div>
+        <div class="group">
+          <input type="submit" class="button" value="Sign In">
+        </div>
+      </div>
+  </form>
+ 
+<form action="${pageContext.request.contextPath }/member/join" method="post">  		
+      <div class="sign-up-htm">
+
+        <div class="group">
+          <label for="user" class="label">ID</label>
+          <input id="user_id" type="text" class="input2" name="user_id">
+          <input type="button" id="idCheck" class="button2" style="color: black;" value="ID중복체크">
+	      <span id="idResult" style="color: black; font-size: 17px; font: bold;"></span>
+        </div>
+        
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="pass" type="password" class="input" name="user_pwd">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Username</label>
+          <input id="pass" type="text" class="input" name="user_name">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">NickName</label>
+          <input id="pass" type="text" class="input" name="user_nickname">
+        </div>        
+        <div class="group">
+          <label for="pass" class="label">Email</label>
+          <input id="pass" type="text" class="input" name="user_email">
+        </div>        
+        <div class="group">
+          <label for="pass" class="label">Tel</label>
+          <input id="pass" type="text" class="input" name="user_tel">
+        </div>       
+        <div class="group">
+          <label for="pass" class="label">Address</label>
+          <input id="pass" type="text" class="input" name="user_addr">
+        </div>       
+        <div class="group">
+          <label for="pass" class="label">Birth</label>
+          <input id="pass" type="text" class="input" name="user_birth">
+        </div>        
+        <div class="group">
+          <label for="pass" class="label">Type</label>
+         	<input type="radio" name="user_type" class="ra" value="1"><a style="color: black;" >일반회원</a>
+			<input type="radio" name="user_type" class="ra" value="2"><a style="color: black;" >관리자</a>
+        </div>      
+        <div class="group">
+          <input type="submit" class="button" value="Sign Up">
+        </div>
+      </div>
+      </form>
+         
+    </div>
+  </div>
+>>>>>>> refs/remotes/origin/master
 </div>
 
 </body>

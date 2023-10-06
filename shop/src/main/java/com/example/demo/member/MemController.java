@@ -1,4 +1,4 @@
-package com.example.demo.member;
+	package com.example.demo.member;
 
 import java.util.ArrayList;
 
@@ -38,10 +38,10 @@ public class MemController {
 		String result = "";
 		Member m = service.getMember(user_id);
 		if (m == null) {
-			result = "사용가능";
+			result = "OK";
 			session.setAttribute("idCheck", true);
 		} else {
-			result = "사용불가능";
+			result = "NO";
 			session.setAttribute("idCheck", false);
 		}
 		System.out.println(session.getAttribute("idCheck"));
