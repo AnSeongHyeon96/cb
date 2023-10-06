@@ -23,17 +23,17 @@ $(document).ready(function() {
 
 </head>
 <body>
-	<h3>상품 상세 정보</h3>
+	<h3>제품 상세정보</h3>
 	<form id="f1" action="${pageContext.request.contextPath }/product/view" 
 	method="post">
 	<input type="hidden" name="pro_num" value="${p.num }">
 	<table border="1" cellspacing="0">
 		<tr>
-			<th>상품 이름</th>
+			<th>제품이름</th>
 			<td><input type="text" value="${p.name }" readonly></td>
 		</tr>
 		<tr>
-			<th>상품 이미지</th>
+			<th>제품이미지</th>
 			<td><c:if test="${empty file0 }">
 					등록된 이미지가 없습니다.
 					</c:if> 
@@ -52,11 +52,11 @@ $(document).ready(function() {
 				</c:if></td>
 		</tr>
 		<tr>
-			<th>상품 내용</th>
+			<th>제품내용</th>
 			<td><input type="text"  value="${p.info }" readonly></td>
 		</tr>
 		<tr>
-			<th>가격</th>
+			<th>제품가격</th>
 			<td><input type="text" value="${p.price }" readonly></td>
 		</tr>
 		

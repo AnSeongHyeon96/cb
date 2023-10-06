@@ -28,12 +28,12 @@
 <table border="1">
 
 <tr>
-<th>상품 이름</th>
+<th>제품이름</th>
 <td><input type="text" name="name" value="${p.name }"></td>
 </tr>
 
 <tr>
-			<th>상품 이미지</th>
+			<th>제품이미지</th>
 			<td><c:if test="${empty file0 }">
 					등록된 이미지가 없습니다.
 					</c:if> 
@@ -53,12 +53,12 @@
 		</tr>
 		
 <tr>
-<th>상품내용</th>
+<th>제품내용</th>
 <td><input type="text" name="info" value="${p.info }"></td>
 </tr>
 
 <tr>
-<th>가격</th>
+<th>제품가격</th>
 <td><input type = "text" name="price" value="${p.price }"></td>
 </tr>
 

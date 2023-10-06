@@ -39,8 +39,8 @@
 	<c:when test="${not empty list }">
 	
 	<tr>
-		<td>상품이름</td>
-		<td>상품내용</td>
+		<td>제품이름</td>
+		<td>제품내용</td>
 		<td>가격</td>
 		
 	</tr>

@@ -78,15 +78,17 @@
 	대분류<select id="s1" name="category1_id"></select>
 	중분류<select id="s2" name="category2_id"></select>
 	소분류<select id="s3" name="category3_id"></select>	<br>
-	상품 이름 : <input type="text" name="name"><br>
-	상품 내용 : <input type="text" name="info"><br>
-	상품 가격:<input type="text" name="price"><br>
+	제품이름 : <input type="text" name="name"><br>
+	제품내용 : <input type="text" name="info"><br>
+	제품가격:<input type="text" name="price"><br>
 	판매자 : <input type="text" name="seller_id" 
 	value="${sessionScope.user_id }" readonly><br>
-	img1:<input type="file" name="file1"><br>
-	img2:<input type="file" name="file2"><br>
-	img3:<input type="file" name="file3"><br>
-	<input type="reset" value="취소">	<input type="submit" value="등록">
+	제품이미지 1 : <input type="file" name="file1"><br>
+	제품이미지 2 : <input type="file" name="file2"><br>
+	제품이미지 3 : <input type="file" name="file3"><br>
+	
+	<input type="submit" value="등록">
+	<input type="reset" value="취소">	
 	</form>
 </body>
 </html>

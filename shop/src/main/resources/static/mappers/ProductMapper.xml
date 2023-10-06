@@ -67,7 +67,7 @@
 	
 	<update id="update" parameterType="com.example.demo.seller.Product">
 		update cbproduct set name=#{name},  info=#{info},  price=#{price}
-		 where seller_id = #{seller_id}
+		 where num = #{num}
 	</update>
 	
 	<delete id="delete" parameterType="int">

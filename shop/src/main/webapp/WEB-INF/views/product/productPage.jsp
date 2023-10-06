@@ -58,31 +58,59 @@ $(document).ready(function() {
 <body>
 <h3>Camp Boss - 상품리스트</h3>
 
-
-<h3>상품 목록</h3>
+<!-- 카테고리 검색 -->
 	<form action="${pageContext.request.contextPath }/seller/cateList"
 		method="post">
-		카테고리 검색: 
-		대분류<select id="s1" name="c1"></select> 
+		<table border="1">
+		<tr>
+		<th>카테고리 검색</th>
+		<td>대분류<select id="s1" name="c1"></select> 
 		중분류<select id="s2" name="c2"></select>
 		소분류<select id="s3" name="c3"></select> 
 		<input type="submit" value="검색">
-	</form>
-	<form action="${pageContext.request.contextPath }/seller/nameList"
-		method="post">
-	제품명으로 검색:	<input type="text" name="name">
-	<input type="submit" value="검색">
-	</form>
-	<form action="${pageContext.request.contextPath }/seller/sellerList"
-		method="post">
-	판매자로 검색:	<input type="text" name="seller_id">
-	<input type="submit" value="검색">
+		</td>
+		</tr>
+		</table>
 	</form>
 	
-	<c:if test="${empty list }">검색된 상품이 없다. </c:if>
+<!-- 제품명으로 검색 -->	
+	<form action="${pageContext.request.contextPath }/seller/nameList"
+		method="post">
+		<table border="1">
+		<tr>
+		<th>제품명으로 검색</th>
+		<td><input type="text" name="name">
+		<input type="submit" value="검색"></td>
+		</tr>
+		</table>
+	</form>
+	
+<!-- 판매자로 검색 -->
+	<form action="${pageContext.request.contextPath }/seller/sellerList"
+		method="post">
+		<table border="1">
+		<tr>
+		<th>판매자로 검색</th>
+		<td><input type="text" name="seller_id">
+		<input type="submit" value="검색"></td>
+		</tr>
+		</table>
+	</form>
+	
+	
+	<!-- 검색된 상품 리스트 출력 -->
+	
+	<c:if test="${empty list }">
+	<table border="1">
+	<tr>
+	<td>검색된 상품이 없습니다.</td>
+	</tr>
+	</table>
+	 </c:if>
+	 
 	<c:if test="${not empty list }">
 	<table border="1" cellspacing="0">
-	<tr><th>상품 이름</th><th>상품 설명</th><th>가격</th><th>판매자</th></tr>
+	<tr><th>제품이름</th><th>제품설명</th><th>제품가격</th><th>판매자</th></tr>
 	<c:forEach var="p" items="${list }">
 	<tr>
 	<td><a href="${pageContext.request.contextPath }
