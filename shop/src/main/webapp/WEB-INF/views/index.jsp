@@ -1,49 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta charset="EUC-KR">
+    <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
     <title>CampBoss</title>
-    <style type="text/css">
-        body {
-            background-color: #ffffff;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #007bff;
-            margin-bottom: 20px;
-        }
-
-        a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
-        }
-
-        a:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    
+    <script src="${path}/resources/js/index.js"></script>
+    
+    <link href="${path}/resources/css/index.css" rel="stylesheet" >
 </head>
 <body>
-    <div class="container">
-        <h1>CampBoss</h1>
-        <a href="${pageContext.request.contextPath}/member/loginForm">로그인</a>
-    </div>
+    main
+    campboss
+    <h2 class="section-heading"><a href="${path}/member/loginForm">LOGIN</a></h2>
+    
 </body>
 </html>
