@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 $(document).ready(function() {
@@ -61,17 +62,19 @@ $(document).ready(function() {
 <!-- 카테고리 검색 -->
 	<form action="${pageContext.request.contextPath }/seller/cateList"
 		method="post">
-		<table border="1">
+		<table>
 		<tr>
-		<th>카테고리 검색</th>
-		<td>대분류<select id="s1" name="c1"></select> 
-		중분류<select id="s2" name="c2"></select>
-		소분류<select id="s3" name="c3"></select> 
+		
+		<td>
+		대분류<select id="s1" name="c1" class="form-select" aria-label="Default select example"></select> 
+		중분류<select id="s2" name="c2" class="form-select" aria-label="Default select example"></select>
+		소분류<select id="s3" name="c3" class="form-select" aria-label="Default select example"></select> 
 		<input type="submit" value="검색">
 		</td>
 		</tr>
 		</table>
 	</form>
+	
 	
 <!-- 제품명으로 검색 -->	
 	<form action="${pageContext.request.contextPath }/seller/nameList"
