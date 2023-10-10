@@ -10,18 +10,15 @@
 
 	<!-- 상단 메뉴바 불러오기  -->
 	<c:import url="/WEB-INF/views/member/mainMenu.jsp"></c:import>
-<<<<<<< HEAD
-	<br><br><br>
-	
-=======
 
->>>>>>> branch 'master' of https://github.com/AnSeongHyeon96/cb.git
+	<br><br><br>
+
 </head>
 <body>
 
 
 
-</br></br></br>
+
 <c:if test="${sessionScope.user_type==1 }">
 	<c:import url="/WEB-INF/views/product/productPage.jsp"></c:import>
 	

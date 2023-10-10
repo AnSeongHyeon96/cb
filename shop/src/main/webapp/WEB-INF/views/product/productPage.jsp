@@ -4,9 +4,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link href="${path}/resources/css/productPage.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/af585378dc.js" crossorigin="anonymous"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 $(document).ready(function() {
@@ -62,42 +64,40 @@ $(document).ready(function() {
 <!-- 카테고리 검색 -->
 	<form action="${pageContext.request.contextPath }/seller/cateList"
 		method="post">
-		<table>
-		<tr>
+	
+		<select id="s1" name="c1" class="box" >
+			<option disabled selected>대분류</option>
+		</select>
+	
+		<select id="s2" name="c2" class="box">
+			<option disabled selected>중분류</option>
+		</select>
 		
-		<td>
-		대분류<select id="s1" name="c1" class="form-select" aria-label="Default select example"></select> 
-		중분류<select id="s2" name="c2" class="form-select" aria-label="Default select example"></select>
-		소분류<select id="s3" name="c3" class="form-select" aria-label="Default select example"></select> 
-		<input type="submit" value="검색">
-		</td>
-		</tr>
-		</table>
+		<select id="s3" name="c3" class="box">
+			<option disabled selected>소분류</option>
+		</select> 
+	
+	<input type="submit" value="검색" >	
 	</form>
 	
 	
 <!-- 제품명으로 검색 -->	
 	<form action="${pageContext.request.contextPath }/seller/nameList"
 		method="post">
-		<table border="1">
-		<tr>
-		<th>제품명으로 검색</th>
-		<td><input type="text" name="name">
-		<input type="submit" value="검색"></td>
-		</tr>
-		</table>
+		
+		
+		<input type="text" name="name" placeholder = "제품명으로 검색">
+		<input type="submit" value="검색">
+		
 	</form>
 	
 <!-- 판매자로 검색 -->
 	<form action="${pageContext.request.contextPath }/seller/sellerList"
 		method="post">
-		<table border="1">
-		<tr>
-		<th>판매자로 검색</th>
-		<td><input type="text" name="seller_id">
-		<input type="submit" value="검색"></td>
-		</tr>
-		</table>
+		
+		<input type="text" name="seller_id"  placeholder = "판매자 검색">
+		<input type="submit" value="검색">
+		
 	</form>
 	
 	
